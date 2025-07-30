@@ -21,41 +21,6 @@ public class PublisController {
     @Autowired
     private UserService userService;
 
-
-    @PostMapping
-    public UserEntity createUser(@RequestBody UserEntity user) {
-        return userService.createUser(user);
-    }
-
-
-    @GetMapping("/{id}")
-    public UserEntity getUserById(@PathVariable Integer id) {
-        return userService.getUserById(id);
-    }
-
-
-    @GetMapping
-    public List<UserEntity> getAllUsers() {
-        return userService.getAllUsers();
-    }
-
-
-    @PutMapping("/{id}")
-    public UserEntity updateUser(@PathVariable Integer id, @RequestBody UserEntity user) {
-        return userService.updateUser(id, user);
-    }
-
-
-    @DeleteMapping("/{id}")
-    public String deleteUser(@PathVariable Integer id) {
-        boolean deleted = userService.deleteUser(id);
-        return deleted ? "User deleted successfully" : "User not found";
-    }
-
-
-    @DeleteMapping
-    public String deleteAllUsers() {
-        userService.deleteAllUsers();
-        return "All users deleted successfully";
-    }
+    
+    
 }
